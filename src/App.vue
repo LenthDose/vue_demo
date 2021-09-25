@@ -1,12 +1,17 @@
 <template>
   <div id="app">
+    <nav-menu></nav-menu>
     <router-view/>
   </div>
 </template>
 
 <script>
+  import NavMenu from "./components/common/NavMenu.vue"
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    NavMenu
+  }
 }
 </script>
 

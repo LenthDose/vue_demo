@@ -2,24 +2,27 @@
     <el-container>
       <el-aside style="width: 200px;margin-top: 20px">
         <switch></switch>
-        <SideMenu></SideMenu>
       </el-aside>
       <el-main>
-        <!--<books></books>-->
+        <Product class="area"></Product>
       </el-main>
     </el-container>
   </template>
   
   <script>
-    import SideMenu from './SideMenu.vue'
+    import Product from './Product.vue'
     export default {
       name: 'ProductIndex',
-      components: {SideMenu}
+      components: {Product}
     }
   </script>
   
   <style scoped>
-  
+    .area {
+      width: 990px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
   
   

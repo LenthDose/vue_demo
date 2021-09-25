@@ -23,13 +23,12 @@ export default {
     data() {
         return {
             navList: [
-                { nama: '/index', navItem: '首页'},
+                { name: '/index', navItem: '首页'},
                 { name: '/product', navItem: '商品'},
                 { name: '/personal', navItem: '个人中心'}
             ]
         };
     },
-
    
 }
 </script>
