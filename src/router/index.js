@@ -16,20 +16,30 @@ export default new Router({
       component: () => import('@/components/Register.vue')
     },
     {
-      path: '/index',
-      name: 'Index',
-      component: () => import('@/components/Index.vue')
-    },
-    {
       path: '/product',
       name: 'Product',
       component: () => import('@/components/product/ProductIndex.vue')
     },
     {
-      path: '/personal',
-      name: 'Personal',
-      component: () => import('@/components/Personal.vue')
-    }
+      path: '/profile',
+      name: 'Profile',
+      component: () => import('@/components/Personal/Profile.vue')
+    },
+    {
+      path: '/manager',
+      name: 'Manager',
+      component: () => import('@/components/Personal/Manager.vue')
+    },
+    {
+      path: '/show',
+      name: 'Show',
+      component: () => import('@/components/Product/productShow.vue')
+    },
+    {
+      path: '/add',
+      name: 'Add',
+      component: () => import('@/components/Product/productAdd.vue')
+    },
   ],
   mode: 'history'
 })

@@ -1,11 +1,11 @@
 <template lang="">
     <div class="register-box">
         <el-form :model="RegisterForm" status-icon :rules="rules" ref="RegisterForm" label-width="100px" class="demo-ruleForm">
-            <el-form-item label="用户名" prop="name">
-                <el-input v-model.number="RegisterForm.name"></el-input>
+            <el-form-item label="用户名" prop="username">
+                <el-input v-model.number="RegisterForm.username"></el-input>
             </el-form-item>
             <el-form-item label="密码" prop="pass">
-              <el-input type="password" v-model="RegisterForm.pass" autocomplete="off"></el-input>
+              <el-input type="password" v-model="RegisterForm.password" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item label="确认密码" prop="checkPass">
               <el-input type="password" v-model="RegisterForm.checkPass" autocomplete="off"></el-input>
@@ -56,8 +56,8 @@ export default {
 
         return {
             RegisterForm:{
-                name: '',
-                pass: '',
+                username: '',
+                password: '',
                 age: '',
                 gender: '',
                 phone: ''
@@ -65,22 +65,22 @@ export default {
 
             rules: {
                 name: [
-                    { required: true, message: '请输入用户名！', trigger: 'blur' },
+                { required: true, message: '请输入用户名！', trigger: 'blur' }
                 ],
                 pass: [
-                    {validator:validatePass, trigger: 'blur'}
+                {validator:validatePass, trigger: 'blur'}
                 ],
                 checkPass: [
-                    {validator:validatePass2, trigger: 'blur'}
+                {validator:validatePass2, trigger: 'blur'}
                 ],
                 age: [
-                    { required: true, message: '请输入年龄', trigger: 'blur' },
+                { required: true, message: '请输入年龄', trigger: 'blur' },
                 ],
                 gender: [
-                    { required: true, message: '请选择性别', trigger: 'change' },
+                { required: true, message: '请选择性别', trigger: 'change' },
                 ],
                 phone: [
-                    { required: true, message: '请输入联系方式', trigger: 'blur' },
+                { required: true, message: '请输入联系方式', trigger: 'blur' },
                 ]
             }
         };
@@ -90,9 +90,9 @@ export default {
         submitForm(formName){
             this.$refs[formName].validate((valid) => {
                 if(valid){
-                    this.$axios.post('/register',{
-                        username: this.RegisterForm.name,
-                        password: this.RegisterForm.pass,
+                    this.$axios.post('/resetUser',{
+                        username: this.RegisterForm.username,
+                        password: this.RegisterForm.password,
                         age: this.RegisterForm.age,
                         gender: this.RegisterForm.gender,
                         phone: this.RegisterForm.phone
