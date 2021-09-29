@@ -40,6 +40,16 @@ export default new Router({
       name: 'Add',
       component: () => import('@/components/Product/productAdd.vue')
     },
+    {
+      path: '/index',
+      name: 'Index',
+      component: () => import('@/components/Index.vue')
+    },
+    {
+      path: '/delete',
+      name: 'Delete',
+      component: () => import('@/components/product/ProductDelete.vue')
+    }
   ],
   mode: 'history'
 })

@@ -52,8 +52,8 @@ export default {
             .then(res => {
               console.log(res);
                 if(res.data.code === 200){
-                  this.$store.commit('login',this.user.username);
-                  console.log(this.$store.state.username);
+                  this.$store.commit('login',res.data.data);
+                  this.$router.push({path: '/index'})
                 }else{
                   alert("您输入的用户名和密码错误！");
                 }
